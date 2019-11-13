@@ -1,0 +1,175 @@
+  
+<script>
+var slideIndex2=1;function plusSlides2(e){showSlides2(slideIndex2+=e)}function currentSlide(e){showSlides2(slideIndex2=e)}function showSlides2(e){var s,l=document.getElementsByClassName("mySlides2");for(e>l.length&&(slideIndex2=1),e<1&&(slideIndex2=l.length),s=0;s<l.length;s++)l[s].style.display="none";l[slideIndex2-1].style.display="block"}showSlides2(slideIndex2);var slideIndex=1;function plusSlides(e){showSlides(slideIndex+=e)}function currentSlide(e){showSlides(slideIndex=e)}function showSlides(e){var s,l=document.getElementsByClassName("mySlides"),d=document.getElementsByClassName("dot");for(e>l.length&&(slideIndex=1),e<1&&(slideIndex=l.length),s=0;s<l.length;s++)l[s].style.display="none";for(s=0;s<d.length;s++)d[s].className=d[s].className.replace(" active","");l[slideIndex-1].style.display="block",d[slideIndex-1].className+=" active"}showSlides(slideIndex);
+</script>
+
+<div class="slideshow-container" onclick="plusSlides(1)">
+{% for product in collections[section.settings.collection1].products %}
+  <div class="mySlides fade" >
+    <img src="{{ product | img_url: '1200x800' }}" style="width:100%">
+    <div class="text">{{ product.title | escape }} - {{ product.price | money}}</div>
+  </div>
+{% endfor %}
+</div>
+
+<div class="slideshow-container" onclick="plusSlides2(1)">
+{% for product in collections[section.settings.collection2].products %}
+  <div class="mySlides2 fade">
+    <img src="{{ product | img_url: '1200x800' }}" style="width:100%">
+    <div class="text">{{ product.title | escape }} - {{ product.price | money}}</div>
+  </div>
+{% endfor %}
+</div>
+
+{% schema %}
+{ 
+   "name":"Mix and Mach",
+   "settings":[ 
+        {
+           "type": "collection",
+           "id": "collection1",
+           "label": "Tag 1",
+           "info":"menus"
+        },
+        {
+           "type": "collection",
+           "id": "collection2",
+           "label": "Tag 2",
+           "info":"menus"
+        }
+    ],
+   "presets":[ 
+      { 
+         "name":"Mix and Mach",
+         "category":"IIM Shopify 2019"
+      }
+   ]
+}
+{% endschema %}
+
+{% stylesheet %}
+
+.button {
+  display: flex;
+  padding: 0.85em 1.5em;
+  font-size: 1.5em;
+  cursor: pointer;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #5c6ac4;
+  border: none;
+  border-radius: 0.62em;
+  box-shadow: 0 0.25em #999999; 
+  justify-content: align-items;
+}
+
+.button:hover {
+  background-color: #202e78;
+}
+
+
+.button:active {
+  background-color: #5c6ac4;
+  box-shadow: 0 0.125em #666666;
+  transform: translateY(0.25em);
+}
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+    color: #000000;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: left;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

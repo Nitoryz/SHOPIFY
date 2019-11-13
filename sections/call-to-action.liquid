@@ -1,0 +1,113 @@
+<hr>
+<div id="section-cta">
+  <div class="container">
+ <h2> {{ section.settings.text-input }} </h2>
+    <a href="{{ section.settings.link }}" class="button" style="width:{{ section.settings.width }}px;height:{{ section.settings.height }}px;font-size:{{ section.settings.font-size }}px;color:{{ section.settings.foreground_color }};background-color:{{ section.settings.background_color }}">{{ section.settings.linktext }}</a>
+  </div>
+</div>
+<hr>
+
+{% schema %}
+{ 
+   "name":"Call to action",
+   "settings":[ 
+      { 
+         "id":"text-input",
+         "type":"text",
+         "label":"Heading",
+         "default":"Title"
+      },
+      { 
+         "id":"link",
+         "type":"url",
+         "label":"Button link"
+      },
+      { 
+         "id":"linktext",
+         "type":"text",
+         "label":"Button text",
+         "default":"Click here"
+
+      },
+      {
+            "type":      "range",
+            "id":        "width",
+            "min":       50,
+            "max":        400,
+            "step":       10,
+            "unit":       "px",
+            "label":     "Width",
+            "default":   100
+        },
+{
+            "type":      "range",
+            "id":        "height",
+            "min":       50,
+            "max":        400,
+            "step":       10,
+            "unit":       "px",
+            "label":     "Height",
+            "default":   100
+        },
+{
+            "type":      "range",
+            "id":        "font-size",
+            "min":       10,
+            "max":        40,
+            "step":       1,
+            "unit":       "px",
+            "label":     "Font size",
+            "default":   16
+        },
+{
+   "type": "color",
+   "id": "background_color",
+   "label": "Background color",
+   "default": "#FF0000"
+},
+{
+   "type": "color",
+   "id": "foreground_color",
+   "label": "Foreground color",
+   "default": "#ffffff"
+}
+   ],
+   "presets":[ 
+      { 
+         "name":"Call to Action",
+         "category":"IIM Shopify 2019"
+      }
+   ]
+}
+{% endschema %}
+
+{% stylesheet %}
+
+.button {
+  display: flex;
+  padding: 0.85em 1.5em;
+  font-size: 1.5em;
+  cursor: pointer;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #5c6ac4;
+  border: none;
+  border-radius: 0.62em;
+  box-shadow: 0 0.25em #999999; 
+  justify-content: align-items;
+}
+
+.button:hover {
+  background-color: #202e78;
+}
+
+.button:active {
+  background-color: #5c6ac4;
+  box-shadow: 0 0.125em #666666;
+  transform: translateY(0.25em);
+}
+
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

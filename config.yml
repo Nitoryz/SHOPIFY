@@ -1,4 +1,6 @@
 development:
-  password: 638975ba93438cd835848b6f32a09049
-  theme_id: "79514370147"
-  store: huncho-wishi.myshopify.com
+  password: d64585ab459c6c6a94095b86df45abfa
+  theme_id: "79135200609"
+  store: tony-rayan.myshopify.com
+  ignore_files:
+    - config/settings_data.json

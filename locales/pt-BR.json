@@ -369,8 +369,7 @@
       "include_taxes": "Taxas incluídas.",
       "shipping_policy_html": "<a href=\"{{ link }}\">Frete<\/a> calculado no checkout.",
       "unit_price_label": "Preço unitário",
-      "view_cart": "Visualizar carrinho",
-      "availability": "Disponibilidade"
+      "view_cart": "Visualizar carrinho"
     }
   },
   "gift_cards": {

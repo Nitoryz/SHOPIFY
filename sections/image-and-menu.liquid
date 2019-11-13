@@ -1,0 +1,47 @@
+<hr>
+<div id="section-img">
+  <div class="container">
+<img src="{{ section.settings.image | img_url: '1000x1000' }}">   
+    <ul>
+        {% for link in linklists[section.settings.menu].links %}
+        <li>
+            <a href="{{ link.url }}">{{ link.title | escape }}</a>
+        </li>
+        {% endfor %}
+    <ul>
+    
+  </div>
+</div>
+<hr>
+
+{% schema %}
+{ 
+   "name":"Image",
+   "settings":[ 
+        {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+        },
+        {
+           "type": "link_list",
+           "id": "menu",
+           "label": "Menu",
+           "info":"menus"
+        }
+    ],
+   "presets":[ 
+      { 
+         "name":"Image / Menu",
+         "category":"IIM Shopify 2019"
+      }
+   ]
+}
+{% endschema %}
+
+{% stylesheet %}
+
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

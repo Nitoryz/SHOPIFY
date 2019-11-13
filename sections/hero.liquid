@@ -28,7 +28,7 @@
       <div class="hero-fixed-width__content">
         <div class="page-width text-center">
           {%- if section.settings.title != blank -%}
-            <h2 class="h1 mega-title{% if section.settings.text_size == 'large' %} mega-title--large{% endif %}">{{ section.settings.title | escape }}</h2>
+            <h2 class="h1 mega-title{% if section.settings.text_size == 'large' %} mega-title--large{% endif %}">{{ section.settings.title | escape }} </h2>
           {%- endif -%}
           {%- if section.settings.text != blank -%}
             <div class="rte-setting mega-subtitle{% if section.settings.text_size == 'large' %} mega-subtitle--large{% endif %}">{{ section.settings.text }}</div>
@@ -55,6 +55,7 @@
              alt="{{ section.settings.image.alt | escape }}">
       {%- else -%}
         <span>
+        
           {% capture current %}{% cycle 1, 2 %}{% endcapture %}
           {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
         </span>
@@ -75,7 +76,7 @@
          {%- endif -%}>
     {%- if section.settings.image == blank -%}
       <div class="placeholder-background">
-        {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+        {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}S
       </div>
     {%- endif -%}
       <div class="hero__inner">
@@ -84,6 +85,8 @@
             <h2 class="h1 mega-title{% if section.settings.text_size == 'large' %} mega-title--large{% endif %}">{{ section.settings.title | escape }}</h2>
           {%- endif -%}
           {%- if section.settings.text != blank -%}
+            
+            
             <div class="rte-setting mega-subtitle{% if section.settings.text_size == 'large' %} mega-subtitle--large{% endif %}">{{ section.settings.text }}</div>
           {%- endif -%}
           {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
